@@ -32,10 +32,7 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   int _currentIndex = 0;
 
-  final List<Widget> _pages = [
-    const HomePage(),
-    const ProfilePage(),
-  ];
+  final List<Widget> _pages = [const HomePage(), const ProfilePage()];
 
   @override
   Widget build(BuildContext context) {
@@ -51,14 +48,8 @@ class _MainPageState extends State<MainPage> {
           });
         },
         items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ],
       ),
     );
@@ -97,7 +88,10 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.grey[100],
       appBar: AppBar(
-        title: const Text('Нүүр хуудас', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+        title: const Text(
+          'Нүүр хуудас',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
         centerTitle: true,
         backgroundColor: Colors.deepPurple,
         elevation: 0,
@@ -127,11 +121,7 @@ class _HomePageState extends State<HomePage> {
                     child: const CircleAvatar(
                       radius: 40,
                       backgroundColor: Colors.deepPurpleAccent,
-                      child: Icon(
-                        Icons.home,
-                        size: 50,
-                        color: Colors.white,
-                      ),
+                      child: Icon(Icons.home, size: 50, color: Colors.white),
                     ),
                   ),
                   const SizedBox(height: 15),
@@ -146,15 +136,12 @@ class _HomePageState extends State<HomePage> {
                   const SizedBox(height: 5),
                   const Text(
                     'Энд тоолуурыг удирдах боломжтой',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.white70,
-                    ),
+                    style: TextStyle(fontSize: 14, color: Colors.white70),
                   ),
                 ],
               ),
             ),
-            
+
             // Тоолуур болон товчлуурууд байрлах хэсэг
             Padding(
               padding: const EdgeInsets.all(20.0),
@@ -186,14 +173,20 @@ class _HomePageState extends State<HomePage> {
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.redAccent,
                           foregroundColor: Colors.white,
-                          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 20,
+                            vertical: 12,
+                          ),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),
                         ),
                         onPressed: _decrementCounter,
                         icon: const Icon(Icons.remove),
-                        label: const Text('Хасах', style: TextStyle(fontSize: 16)),
+                        label: const Text(
+                          'Хасах',
+                          style: TextStyle(fontSize: 16),
+                        ),
                       ),
                       const SizedBox(width: 20),
                       // Нэмэх товч
@@ -201,14 +194,20 @@ class _HomePageState extends State<HomePage> {
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.deepPurple,
                           foregroundColor: Colors.white,
-                          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 20,
+                            vertical: 12,
+                          ),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),
                         ),
                         onPressed: _incrementCounter,
                         icon: const Icon(Icons.add),
-                        label: const Text('Нэмэх', style: TextStyle(fontSize: 16)),
+                        label: const Text(
+                          'Нэмэх',
+                          style: TextStyle(fontSize: 16),
+                        ),
                       ),
                     ],
                   ),
@@ -253,8 +252,13 @@ class _ProfilePageState extends State<ProfilePage> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-          title: const Text('Профайл засах', style: TextStyle(fontWeight: FontWeight.bold)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+          title: const Text(
+            'Профайл засах',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
           content: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -263,7 +267,9 @@ class _ProfilePageState extends State<ProfilePage> {
                   controller: nameController,
                   decoration: InputDecoration(
                     labelText: 'Нэр',
-                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                   ),
                 ),
                 const SizedBox(height: 12),
@@ -271,7 +277,9 @@ class _ProfilePageState extends State<ProfilePage> {
                   controller: emailController,
                   decoration: InputDecoration(
                     labelText: 'Имэйл',
-                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                   ),
                 ),
                 const SizedBox(height: 12),
@@ -279,7 +287,9 @@ class _ProfilePageState extends State<ProfilePage> {
                   controller: majorController,
                   decoration: InputDecoration(
                     labelText: 'Сургууль / Анги',
-                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                   ),
                 ),
                 const SizedBox(height: 12),
@@ -287,7 +297,9 @@ class _ProfilePageState extends State<ProfilePage> {
                   controller: hobbyController,
                   decoration: InputDecoration(
                     labelText: 'Сонирхол',
-                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                   ),
                 ),
               ],
@@ -302,7 +314,9 @@ class _ProfilePageState extends State<ProfilePage> {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.deepPurple,
                 foregroundColor: Colors.white,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
               ),
               onPressed: () {
                 setState(() {
@@ -312,9 +326,11 @@ class _ProfilePageState extends State<ProfilePage> {
                   hobby = hobbyController.text;
                 });
                 Navigator.pop(context);
-                
+
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Профайл амжилттай шинэчлэгдлээ!')),
+                  const SnackBar(
+                    content: Text('Профайл амжилттай шинэчлэгдлээ!'),
+                  ),
                 );
               },
               child: const Text('Хадгалах'),
@@ -330,7 +346,10 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       backgroundColor: Colors.grey[100],
       appBar: AppBar(
-        title: const Text('Миний Профайл', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+        title: const Text(
+          'Миний Профайл',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
         centerTitle: true,
         backgroundColor: Colors.deepPurple,
         elevation: 0,
@@ -360,11 +379,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     child: const CircleAvatar(
                       radius: 50,
                       backgroundColor: Colors.deepPurpleAccent,
-                      child: Icon(
-                        Icons.person,
-                        size: 60,
-                        color: Colors.white,
-                      ),
+                      child: Icon(Icons.person, size: 60, color: Colors.white),
                     ),
                   ),
                   const SizedBox(height: 15),
@@ -383,10 +398,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     email,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                      fontSize: 15,
-                      color: Colors.white70,
-                    ),
+                    style: const TextStyle(fontSize: 15, color: Colors.white70),
                   ),
                   const SizedBox(height: 30),
                 ],
@@ -399,7 +411,11 @@ class _ProfilePageState extends State<ProfilePage> {
                 children: [
                   const Text(
                     'Ерөнхий мэдээлэл',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black87),
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87,
+                    ),
                   ),
                   const SizedBox(height: 15),
                   Card(
@@ -415,9 +431,15 @@ class _ProfilePageState extends State<ProfilePage> {
                           color: Colors.deepPurple.withOpacity(0.1),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: const Icon(Icons.school, color: Colors.deepPurple),
+                        child: const Icon(
+                          Icons.school,
+                          color: Colors.deepPurple,
+                        ),
                       ),
-                      title: const Text('Сургууль / Анги', style: TextStyle(fontWeight: FontWeight.w600)),
+                      title: const Text(
+                        'Сургууль / Анги',
+                        style: TextStyle(fontWeight: FontWeight.w600),
+                      ),
                       subtitle: Text(
                         major,
                         maxLines: 1,
@@ -442,7 +464,10 @@ class _ProfilePageState extends State<ProfilePage> {
                         ),
                         child: const Icon(Icons.favorite, color: Colors.pink),
                       ),
-                      title: const Text('Сонирхол', style: TextStyle(fontWeight: FontWeight.w600)),
+                      title: const Text(
+                        'Сонирхол',
+                        style: TextStyle(fontWeight: FontWeight.w600),
+                      ),
                       subtitle: Text(
                         hobby,
                         maxLines: 2,
@@ -466,8 +491,11 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                       onPressed: _showEditDialog,
                       child: const Text(
-                        'Профайл засах',
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                        'pro zasah',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
